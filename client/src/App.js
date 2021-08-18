@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Better POS System
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Main Page</h1>
+      {/* Main Wrapper */}
+      {/* Top Header Options Bar */}
+      {/* Left Order Summary */}
+      {/* Right Order Menu */}
     </div>
   );
 }
