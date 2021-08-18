@@ -1,13 +1,20 @@
-import './App.css';
+import "./App.css";
+import HeaderBar from "./components/HeaderBar/HeaderBar";
+import OrderSummary from "./components/OrderSummary/OrderSummary";
+import MenuSystem from "./components/MenuSystem/MenuSystem";
 
 function App() {
   return (
     <div className="App">
-      <h1>Main Page</h1>
+      <h1 style={{textAlign: 'center'}}>Better POSS</h1>
       {/* Main Wrapper */}
-      {/* Top Header Options Bar */}
-      {/* Left Order Summary */}
-      {/* Right Order Menu */}
+      <HeaderBar />
+      <div className="wrapper">
+        <OrderSummary />
+        <MenuSystem />
+        {/* Left Order Summary */}
+        {/* Right Order Menu */}
+      </div>
     </div>
   );
 }
