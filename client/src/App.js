@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import HeaderBar from "./components/HeaderBar/HeaderBar";
 import OrderSummary from "./components/OrderSummary/OrderSummary";
 import MenuSystem from "./components/MenuSystem/MenuSystem";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./OrderSummary.css";
+import "./OrderSummary.scss";
 
 const temp = {
   items: [
@@ -34,19 +34,8 @@ const temp = {
 const OrderSummary = () => {
   return (
     <div className="container__order">
-      <div
-        style={{
-          borderBottom: "1px solid black",
-        }}
-      >
-        <div
-          style={{
-            display: "inline-grid",
-            gridTemplateColumns: "repeat(4, 30px [col-start])",
-            columnGap: "50px",
-            margin: "10px 10px 0px 30px",
-          }}
-        >
+      <div className="order__title">
+        <div className="order__grids">
           <div>Qt.</div>
           <div>Item</div>
           <div>Size</div>
@@ -55,36 +44,22 @@ const OrderSummary = () => {
       </div>
 
       <div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="order__rows">
           {temp.items.map((item, key) => {
             return (
               <div>
-                <div
-                  style={{
-                    display: "inline-grid",
-                    gridTemplateColumns: "repeat(4, 30px [col-start])",
-                    columnGap: "50px",
-                    margin: "10px 10px 0px 30px",
-                  }}
-                >
+                <div className="order__row__columns">
                   <div>{item.amount}</div>
                   <div>{item.name}</div>
                   <div>{item.size ? item.size : " "}</div>
                   <div>{item.price.toFixed(2)}</div>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    margin: "10px",
-                    marginTop: 0,
-                  }}
-                >
+                <div className="order__special">
                   {/* {item.special ? item.special : " "} */}
                   {item.special
                     ? item.special.map((special) => {
                         return (
-                          <div style={{marginLeft: "25px"}}>
+                          <div className="inner">
                             <div>*{special}</div>
                           </div>
                         );
@@ -95,20 +70,16 @@ const OrderSummary = () => {
             );
           })}
         </div>
-        <div
-          style={{
-            display: "inline-grid",
-            gridTemplateColumns: "repeat(2, 190px [col-start])",
-            columnGap: "50px",
-            margin: "10px 10px 0px 30px",
-          }}
-        >
-          <div>SubTOTAL:</div>
-          <div>{temp.subtotal.toFixed(2)}</div>
-          <div>TAX:</div>
-          <div>{temp.tax.toFixed(2)}</div>
-          <div>TOTAL:</div>
-          <div>{temp.total.toFixed(2)}</div>
+        <div>
+          <div className="order__divider">*****************************************</div>
+          <div className="order__totals">
+            <div>SubTOTAL:</div>
+            <div>{temp.subtotal.toFixed(2)}</div>
+            <div>TAX:</div>
+            <div>{temp.tax.toFixed(2)}</div>
+            <div>TOTAL:</div>
+            <div>{temp.total.toFixed(2)}</div>
+          </div>
         </div>
       </div>
     </div>
