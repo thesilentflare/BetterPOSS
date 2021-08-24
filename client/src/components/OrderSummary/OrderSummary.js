@@ -25,6 +25,118 @@ const temp = {
       amount: 1,
       price: 0.0,
     },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    },
+    {
+      type: "Fries",
+      name: "FFries",
+      size: "S",
+      special: ["PROMO"],
+      amount: 1,
+      price: 0.0,
+    }
   ],
   subtotal: 5.58,
   tax: 0.73,
@@ -34,6 +146,9 @@ const temp = {
 const OrderSummary = () => {
   return (
     <div className="container__order">
+      <div>
+        <h2 style={{ textAlign: "center" }}>ORDER SUMMARY</h2>
+      </div>
       <div className="order__title">
         <div className="order__grids">
           <div>Qt.</div>
@@ -42,8 +157,7 @@ const OrderSummary = () => {
           <div>Price</div>
         </div>
       </div>
-
-      <div>
+      <div className="order__scroller">
         <div className="order__rows">
           {temp.items.map((item, key) => {
             return (
@@ -71,7 +185,9 @@ const OrderSummary = () => {
           })}
         </div>
         <div>
-          <div className="order__divider">*****************************************</div>
+          <div className="order__divider">
+            *****************************************
+          </div>
           <div className="order__totals">
             <div>SubTOTAL:</div>
             <div>{temp.subtotal.toFixed(2)}</div>

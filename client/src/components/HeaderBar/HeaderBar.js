@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function HeaderBar() {
+const HeaderBar = () => {
   const classes = useStyles();
   return (
     <AppBar position="static">

@@ -18,6 +18,16 @@
   margin: 10px 10px 0px 30px;
 }
 
+.order__scroller {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 70vh;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 .order__rows {
   display: flex;
   flex-direction: column;
