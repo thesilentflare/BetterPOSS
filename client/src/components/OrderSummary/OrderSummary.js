@@ -1,67 +1,67 @@
 import React from "react";
 import "./OrderSummary.scss";
 
-const temp = {
-  items: [
-    {
-      type: "Burger",
-      name: "BMac",
-      special: ["NO LETTUCE", "EXT MAYO"],
-      amount: 1,
-      price: 4.99,
-    },
-    {
-      type: "Drink",
-      name: "Fanta",
-      size: "L",
-      amount: 1,
-      price: 0.99,
-    },
-    {
-      type: "Fries",
-      name: "FFries",
-      size: "S",
-      special: ["PROMO"],
-      amount: 1,
-      price: 0.0,
-    },
-    {
-      type: "Fries",
-      name: "FFries",
-      size: "S",
-      special: ["PROMO"],
-      amount: 1,
-      price: 0.0,
-    },
-    {
-      type: "Fries",
-      name: "FFries",
-      size: "S",
-      special: ["PROMO"],
-      amount: 1,
-      price: 0.0,
-    },
-    {
-      type: "Fries",
-      name: "FFries",
-      size: "S",
-      special: ["PROMO"],
-      amount: 1,
-      price: 0.0,
-    },
-    {
-      type: "Fries",
-      name: "FFries",
-      size: "S",
-      special: ["PROMO"],
-      amount: 1,
-      price: 0.0,
-    }
-  ],
-  subtotal: 5.58,
-  tax: 0.73,
-  total: 6.31,
-};
+// const temp = {
+//   items: [
+//     {
+//       type: "Burger",
+//       name: "BMac",
+//       special: ["NO LETTUCE", "EXT MAYO"],
+//       amount: 1,
+//       price: 4.99,
+//     },
+//     {
+//       type: "Drink",
+//       name: "Fanta",
+//       size: "L",
+//       amount: 1,
+//       price: 0.99,
+//     },
+//     {
+//       type: "Fries",
+//       name: "FFries",
+//       size: "S",
+//       special: ["PROMO"],
+//       amount: 1,
+//       price: 0.0,
+//     },
+//     {
+//       type: "Fries",
+//       name: "FFries",
+//       size: "S",
+//       special: ["PROMO"],
+//       amount: 1,
+//       price: 0.0,
+//     },
+//     {
+//       type: "Fries",
+//       name: "FFries",
+//       size: "S",
+//       special: ["PROMO"],
+//       amount: 1,
+//       price: 0.0,
+//     },
+//     {
+//       type: "Fries",
+//       name: "FFries",
+//       size: "S",
+//       special: ["PROMO"],
+//       amount: 1,
+//       price: 0.0,
+//     },
+//     {
+//       type: "Fries",
+//       name: "FFries",
+//       size: "S",
+//       special: ["PROMO"],
+//       amount: 1,
+//       price: 0.0,
+//     }
+//   ],
+//   subtotal: 5.58,
+//   tax: 0.73,
+//   total: 6.31,
+// };
 
 class OrderSummary extends React.Component {
   render() {
@@ -80,7 +80,7 @@ class OrderSummary extends React.Component {
         </div>
         <div className="order__scroller">
           <div className="order__rows">
-            {temp.items.map((item, key) => {
+            {this.props.order.items.map((item, key) => {
               return (
                 <div>
                   <div className="order__row__columns">
@@ -105,19 +105,23 @@ class OrderSummary extends React.Component {
               );
             })}
           </div>
-          <div>
-            <div className="order__divider">
-              *****************************************
+          {this.props.order.items > 0 ? (
+            <div>
+              <div className="order__divider">
+                *****************************************
+              </div>
+              <div className="order__totals">
+                <div>SubTOTAL:</div>
+                <div>{this.props.order.subtotal.toFixed(2)}</div>
+                <div>TAX:</div>
+                <div>{this.props.order.tax.toFixed(2)}</div>
+                <div>TOTAL:</div>
+                <div>{this.props.order.total.toFixed(2)}</div>
+              </div>
             </div>
-            <div className="order__totals">
-              <div>SubTOTAL:</div>
-              <div>{temp.subtotal.toFixed(2)}</div>
-              <div>TAX:</div>
-              <div>{temp.tax.toFixed(2)}</div>
-              <div>TOTAL:</div>
-              <div>{temp.total.toFixed(2)}</div>
-            </div>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );
