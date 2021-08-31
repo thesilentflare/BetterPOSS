@@ -7,9 +7,10 @@ import React, { useState } from "react";
 function App() {
   const [currentOrder, setCurrentOrder] = useState({
     items: [],
-    subtotal: 0.00,
-    tax: 0.00,
-    total: 0.00,
+    subtotal: 0.0,
+    tax: 0.0,
+    total: 0.0,
+    time: null
   });
 
   return (
@@ -18,8 +19,8 @@ function App() {
       {/* Main Wrapper */}
       <HeaderBar />
       <div className="wrapper">
-        <OrderSummary order={currentOrder}/>
-        <MenuSystem />
+        <OrderSummary order={currentOrder} setorder={setCurrentOrder} />
+        <MenuSystem setorder={setCurrentOrder} />
         {/* Left Order Summary */}
         {/* Right Order Menu */}
       </div>

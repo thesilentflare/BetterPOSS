@@ -120,7 +120,7 @@ class OrderSummary extends React.Component {
               </div>
             </div>
           ) : (
-            ""
+            <div className="order__blank">NO ITEMS SELECTED</div>
           )}
         </div>
       </div>
