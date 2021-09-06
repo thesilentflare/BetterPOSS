@@ -95,7 +95,7 @@ class OrderSummary extends React.Component {
                       ? item.special.map((special) => {
                           return (
                             <div className="inner">
-                              <div>*{special}</div>
+                              <div>*{special.item}: {special.amount}</div>
                             </div>
                           );
                         })

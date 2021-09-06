@@ -8,7 +8,7 @@ import {
 } from "mdb-react-ui-kit";
 import Burgers from "./BurgersMenu";
 
-export default function MenuSystem() {
+export default function MenuSystem(props) {
   const [basicActive, setBasicActive] = useState("tab1");
 
   const handleBasicClick = (value) => {
@@ -16,6 +16,10 @@ export default function MenuSystem() {
       return;
     }
     setBasicActive(value);
+  };
+
+  const handleOrder = (items) =>{
+    this.props.setorder(items);
   };
 
   return (
@@ -49,7 +53,7 @@ export default function MenuSystem() {
 
       <MDBTabsContent>
         <MDBTabsPane show={basicActive === "tab1"}>
-          <Burgers />
+          <Burgers setorder={props.setorder} order={props.order}/>
         </MDBTabsPane>
         <MDBTabsPane show={basicActive === "tab2"}>Tab 2 content</MDBTabsPane>
         <MDBTabsPane show={basicActive === "tab3"}>Tab 3 content</MDBTabsPane>

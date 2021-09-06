@@ -66,3 +66,23 @@
   column-gap: 50px;
   margin: 0px 10px 0px 30px;
 }
+
+.burger__modal{
+  .modal-content{
+    background-color: rgb(92, 92, 92);
+  }
+}
+
+.nav-link.active{
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+.nav-tabs .nav-link {
+  background-color: rgb(43, 43, 43);
+  color: #fff;
+}
+
+.nav-link:hover {
+  background-color: rgb(25, 41, 51) !important;
+}

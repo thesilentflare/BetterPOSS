@@ -20,7 +20,7 @@ function App() {
       <HeaderBar />
       <div className="wrapper">
         <OrderSummary order={currentOrder} setorder={setCurrentOrder} />
-        <MenuSystem setorder={setCurrentOrder} />
+        <MenuSystem setorder={setCurrentOrder} order={currentOrder}/>
         {/* Left Order Summary */}
         {/* Right Order Menu */}
       </div>
