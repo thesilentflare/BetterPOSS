@@ -23,9 +23,10 @@ export default function BurgersMenu(props) {
         { item: "Mayo", amount: 0 },
         { item: "MacSauce", amount: 1 },
       ],
+      price: 4.99,
     },
-    { item: "Cheese Burger", img: "", options: [] },
-    { item: "QPounder", img: "", options: [] },
+    { item: "Cheese Burger", img: "", options: [], price: 4.99 },
+    { item: "QPounder", img: "", options: [], price: 4.99 },
   ];
   const [basicModal, setBasicModal] = useState(false);
   const [selectedBurger, setSelectedBurger] = useState({});
@@ -39,12 +40,21 @@ export default function BurgersMenu(props) {
     setBasicModal(!basicModal);
   };
   const addToOrder = () => {
-    let temp = { name: selectedBurger.item.toString(), special: selectedBurgerOptions, amount: 1, price: 4.99 };
+    let temp = {
+      name: selectedBurger.item.toString(),
+      special: selectedBurgerOptions,
+      amount: 1,
+      price: 4.99,
+    };
+    let subtotal = props.order.subtotal + temp.price;
+    let tax = subtotal * 0.13;
+    let total = subtotal + tax;
+    console.log(typeof subtotal);
     props.setorder({
       items: [...props.order.items, temp],
-      subtotal: props.order.subtotal,
-      tax: props.order.tax,
-      total: props.order.total,
+      subtotal: subtotal,
+      tax: tax,
+      total: total,
       time: null,
     });
     toggleShow();
@@ -54,7 +64,7 @@ export default function BurgersMenu(props) {
     temp[key].amount++;
     //setSelectedBurgerOptions(temp);
     // console.log(selectedBurgerOptions);
-    setSelectedBurgerOptions(() => ([...temp]));
+    setSelectedBurgerOptions(() => [...temp]);
   };
 
   return (
